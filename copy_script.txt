@@ -1,0 +1,9 @@
+COPY (SELECT * FROM ping
+  WHERE 20.00 > latitude AND
+  latitude > 4.649807 AND
+  60.00 > longitude AND
+  longitude > 40.00 AND
+  ts_pos_utc > '2016-09-01 00:00:00-00' AND
+  ts_pos_utc < '2016-12-01 00:00:00-00') 
+
+TO 'C:/custom/out.csv'  With CSV;
